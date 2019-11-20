@@ -12,7 +12,7 @@ const orders = [];
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
 
-app.get("/get_orders", (req, res) => {
+app.get("/test", (req, res) => {
     res.status(200).send("Working");
 });
 
