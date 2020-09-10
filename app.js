@@ -1,5 +1,7 @@
 const express = require("express");
+var StatsD = require('hot-shots');
 
+var dogstatsd = new StatsD();
 const app = express();
 const bodyparser = require("body-parser");
 
@@ -19,3 +21,6 @@ app.get("/test", (req, res) => {
 app.listen(port, () => {
     console.log(`running on port ${port}`);
 });
+
+// Increment counter
+dogstatsd.increment('page.views');
